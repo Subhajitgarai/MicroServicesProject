@@ -19,6 +19,7 @@
 	</properties>
 	<dependencies>
 		<dependency>
+			<!--Can be Run without this-->
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
@@ -26,10 +27,6 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter</artifactId>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-starter-gateway-mvc</artifactId>-->
-<!--		</dependency>-->
 <!--		For Eureka client registration-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -50,7 +47,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
 		</dependency>
-
+		<!--Can be Run without this-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
