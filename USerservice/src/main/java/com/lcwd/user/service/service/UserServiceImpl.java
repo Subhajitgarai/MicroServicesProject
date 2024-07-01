@@ -9,9 +9,11 @@ import com.lcwd.user.service.external.services.RatingsExternalService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,7 +51,19 @@ public class UserServiceImpl implements UserService{
 //        List<Ratings> ratingsOfUser = Arrays.stream(ratings).toList();
 
 //        Getting Rattings by using Feign Client
-        List<Ratings>ratingsOfUser=ratingsExternalService.getRatingsByUserId(userId);
+        List<Ratings>ratingsOfUser=ratingsExternalService.getRatingsByUserId(userId)
+        // You can call the following external api by WebClient also
+//        WebClient webClient=WebClient.create();
+//        List<Ratings> userRatings = webClient.get().uri("http://localhost:8082/ratings/user/" + userId)
+//                .retrieve()
+//                .bodyToMono(new ParameterizedTypeReference<List<Ratings>>() {
+//                })
+//                .onErrorMap((e) -> new RuntimeException("Error while calling api ", e))
+//                .block();
+//        userRatings.forEach(ratings -> {
+//            System.out.println("UserId = "+ratings.getUserId());
+//        });
+
 
         //Getting Hotel information and set that in the Rating List
         ratingsOfUser.forEach(rat->{
