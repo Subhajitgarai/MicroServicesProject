@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService{
 //        List<Ratings> ratingsOfUser = Arrays.stream(ratings).toList();
 
 //        Getting Rattings by using Feign Client
-        List<Ratings>ratingsOfUser=ratingsExternalService.getRatingsByUserId(userId)
+        List<Ratings>ratingsOfUser=ratingsExternalService.getRatingsByUserId(userId);
         // You can call the following external api by WebClient also
 //        WebClient webClient=WebClient.create();
 //        List<Ratings> userRatings = webClient.get().uri("http://localhost:8082/ratings/user/" + userId)
